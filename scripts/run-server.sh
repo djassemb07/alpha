@@ -26,4 +26,6 @@ echo "🚀 تشغيل الخادم على http://localhost:$PORT"
 echo "   (اضغط Ctrl+C للإيقاف)"
 
 export LD_LIBRARY_PATH="$(dirname $(command -v llama-server)):$LD_LIBRARY_PATH"
-llama-server -m "$MODEL_FILE" --host 0.0.0.0 --port "$PORT" --ctx-size 4096 --threads 4
+# إعدادات محسّنة للذاكرة: سياق 1024، فتحة واحدة، بدون وضع التفكير (ردود أسرع)
+llama-server -m "$MODEL_FILE" --host 0.0.0.0 --port "$PORT" \
+    --ctx-size "${CTX_SIZE:-1024}" --parallel 1 --threads 4 --reasoning off
