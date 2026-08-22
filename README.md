@@ -28,6 +28,10 @@ bash scripts/run-server.sh
 
 # أو جرّب محادثة نصية في الطرفية:
 python3 scripts/chat.py
+
+# أو واجهة ويب عربية أنيقة (اختياري):
+python3 scripts/web_chat.py
+# ثم افتح: http://localhost:3000
 ```
 
 ## 📡 استخدامه عبر API
